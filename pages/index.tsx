@@ -1,22 +1,27 @@
 import { NextPage, GetStaticProps } from 'next'
-import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import TestButton from '@components/TestButton'
-import Icon from '@components/common/Icon'
+import Hero from '@components/home/Hero'
+import AboutUs from '@components/home/AboutUs'
+import ProductSupport from '@components/home/ProductSupport'
+import Services from '@components/home/Services'
+import Integration from '@components/home/Integration'
+import Works from '@components/home/Works'
+import Clients from '@components/home/Clients'
+import Ads from '@components/home/Ads'
 
-const HomePage: NextPage = () => {
-  const { t } = useTranslation('common')
-
-  return (
-    <div className='container flex max-w-7xl flex-col items-center gap-4'>
-      <h1>{t('title')}</h1>
-      <p>let try to rework dee ploythec website</p>
-      <Icon name='magnifying-chart' size={900} color='addddasdf asdf ' />
-      <TestButton />
-    </div>
-  )
-}
+const HomePage: NextPage = () => (
+  <>
+    <Hero />
+    <AboutUs />
+    <ProductSupport />
+    <Services />
+    <Integration />
+    <Works />
+    <Clients />
+    <Ads />
+  </>
+)
 
 export default HomePage
 
