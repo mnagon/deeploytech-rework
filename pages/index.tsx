@@ -3,23 +3,25 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import Hero from '@components/home/Hero'
 import AboutUs from '@components/home/AboutUs'
+import SoftSkills from '@components/home/SoftSkills'
 import ProductSupport from '@components/home/ProductSupport'
 import Services from '@components/home/Services'
 import Integration from '@components/home/Integration'
 import Works from '@components/home/Works'
 import Clients from '@components/home/Clients'
-import Ads from '@components/home/Ads'
+import Promote from '@components/home/Promote'
 
 const HomePage: NextPage = () => (
   <>
     <Hero />
     <AboutUs />
+    <SoftSkills />
     <ProductSupport />
     <Services />
     <Integration />
     <Works />
     <Clients />
-    <Ads />
+    <Promote />
   </>
 )
 

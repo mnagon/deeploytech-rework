@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 const Navbar: FC = () => {
-  return <div>Navbar</div>
+  return <div className='absolute'>Navbar</div>
 }
 
 export default Navbar

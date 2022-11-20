@@ -15,6 +15,9 @@ module.exports = {
         prompt: 'Prompt, sans-serif;',
         sarabun: 'Sarabun, sans-serif;',
       },
+      backgroundImage: {
+        hero: "url('/images/hero-background.png')",
+      },
     },
   },
   plugins: [],
