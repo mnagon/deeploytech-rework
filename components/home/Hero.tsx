@@ -25,8 +25,9 @@ const ContactButton: FC<PropsWithChildren> = ({ children }) => {
 
 const Hero: FC = () => {
   const { t } = useTranslation('home')
+
   return (
-    <section className='h-96 min-h-screen w-full bg-hero bg-cover bg-center'>
+    <section className='h-96 min-h-screen w-full bg-hero bg-cover bg-fixed bg-center bg-no-repeat py-20'>
       <div className='container flex h-full max-w-7xl flex-col items-center justify-center lg:items-start'>
         <h1 className='mb-4 text-center text-4xl font-medium sm:w-8/12 lg:w-7/12 lg:text-left lg:text-7xl'>
           {t('hero__title')}
