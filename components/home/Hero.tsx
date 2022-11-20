@@ -1,24 +1,30 @@
 import { FC, PropsWithChildren, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 
+import Icon from '@components/common/Icon'
+
 const ContactButton: FC<PropsWithChildren> = ({ children }) => {
   const [isHover, setHover] = useState<boolean>(false)
 
   return (
     <button
-      className='w-40 rounded-full bg-primary py-3 hover:shadow-lg hover:brightness-125'
+      className='w-40 rounded-full bg-primary py-3 hover:shadow-2xl hover:brightness-125'
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
       <span
-        className={`relative inline-block transition-all duration-200 after:top-0 after:font-bold after:transition-all after:duration-200 after:content-['\\00bb'] ${
-          isHover
-            ? 'pl-0 after:-right-5 after:ml-2 after:opacity-100'
-            : 'pl-2 after:ml-0 after:opacity-0'
+        className={`relative inline-block transition-all duration-200 ${
+          isHover ? 'mr-2 pl-1' : 'pl-5'
         } `}
       >
         {children}
       </span>
+      <Icon
+        name='chevron-double-right'
+        className={`inline-block w-4 text-base transition-all duration-200 ${
+          isHover ? 'opacity-100' : 'ml-0 opacity-0'
+        }`}
+      />
     </button>
   )
 }

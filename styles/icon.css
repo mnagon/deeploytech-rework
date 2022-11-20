@@ -27,6 +27,11 @@ i.icon.browser-setting {
   mask-image: url(../assets/icons/browser-setting.svg);
 }
 
+i.icon.chevron-double-right {
+  -webkit-mask-image: url(../assets/icons/chevron-double-right.svg);
+  mask-image: url(../assets/icons/chevron-double-right.svg);
+}
+
 i.icon.flutter {
   -webkit-mask-image: url(../assets/icons/flutter.svg);
   mask-image: url(../assets/icons/flutter.svg);
