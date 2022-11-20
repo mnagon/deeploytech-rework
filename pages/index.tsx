@@ -30,7 +30,7 @@ export default HomePage
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale as string, ['common'])),
+      ...(await serverSideTranslations(locale as string, ['common', 'home'])),
     },
   }
 }
