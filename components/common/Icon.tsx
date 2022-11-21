@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-type IconName =
+export type IconName =
   | 'bright'
   | 'browser-setting'
   | 'chevron-double-right'

@@ -33,12 +33,12 @@ const Hero: FC = () => {
   const { t } = useTranslation('home')
 
   return (
-    <section className='h-96 min-h-screen w-full bg-hero bg-cover bg-fixed bg-center bg-no-repeat py-20'>
+    <section className='mb-10 h-96 min-h-screen w-full bg-hero bg-cover bg-fixed bg-center bg-no-repeat py-20 lg:mb-20'>
       <div className='container flex h-full max-w-7xl flex-col items-center justify-center lg:items-start'>
-        <h1 className='mb-4 text-center text-4xl font-medium text-white sm:w-8/12 lg:w-7/12 lg:text-left lg:text-7xl'>
+        <h1 className='mb-4 text-center text-4xl font-medium text-white lg:w-7/12 lg:text-left lg:text-7xl'>
           {t('hero__title')}
         </h1>
-        <p className='mb-8 w-2/3 text-center text-white lg:w-1/2 lg:text-left lg:text-xl'>
+        <p className='mb-8 max-w-2xl text-center text-white lg:w-1/2 lg:text-left lg:text-xl'>
           {t('hero__content')}
         </p>
         <ContactButton>{t('hero__button')}</ContactButton>

@@ -1,12 +1,12 @@
 import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
 
-interface Rating {
+interface RatingProps {
   title: string
   description: string
 }
 
-const Rating: FC<Rating> = ({ title, description }) => (
+const Rating: FC<RatingProps> = ({ title, description }) => (
   <li className='flex flex-col items-center space-y-1 text-center font-prompt text-white lg:space-y-2'>
     <span className='text-3xl font-medium lg:text-5xl'>{title}</span>
     <span className='max-w-[164px] text-sm'>{description}</span>
@@ -16,7 +16,7 @@ const Rating: FC<Rating> = ({ title, description }) => (
 const AboutUs: FC = () => {
   const { t } = useTranslation('home')
 
-  const RATING_LIST: Array<Rating> = [
+  const RATING_LIST: Array<RatingProps> = [
     {
       title: '100%',
       description: t('about-us__satisfication-level'),
@@ -36,7 +36,7 @@ const AboutUs: FC = () => {
   ]
 
   return (
-    <section className='py-12 lg:py-24'>
+    <section className='mb-10 lg:mb-20'>
       <div className='container flex max-w-7xl flex-col items-center text-center'>
         <h2 className='mb-4 text-sm text-primary'>{t('about-us__title')}</h2>
         <p className='mb-4 font-prompt text-2xl font-medium lg:text-4xl'>
