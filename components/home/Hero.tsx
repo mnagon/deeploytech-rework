@@ -8,7 +8,7 @@ const ContactButton: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <button
-      className='w-40 rounded-full bg-primary py-3 hover:shadow-2xl hover:brightness-125'
+      className='w-40 rounded-full bg-primary py-3 text-white hover:shadow-2xl hover:brightness-125'
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -35,10 +35,10 @@ const Hero: FC = () => {
   return (
     <section className='h-96 min-h-screen w-full bg-hero bg-cover bg-fixed bg-center bg-no-repeat py-20'>
       <div className='container flex h-full max-w-7xl flex-col items-center justify-center lg:items-start'>
-        <h1 className='mb-4 text-center text-4xl font-medium sm:w-8/12 lg:w-7/12 lg:text-left lg:text-7xl'>
+        <h1 className='mb-4 text-center text-4xl font-medium text-white sm:w-8/12 lg:w-7/12 lg:text-left lg:text-7xl'>
           {t('hero__title')}
         </h1>
-        <p className='mb-8 w-2/3 text-center lg:w-1/2 lg:text-left lg:text-xl'>
+        <p className='mb-8 w-2/3 text-center text-white lg:w-1/2 lg:text-left lg:text-xl'>
           {t('hero__content')}
         </p>
         <ContactButton>{t('hero__button')}</ContactButton>
