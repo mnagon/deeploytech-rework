@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useMemo } from 'react'
 import { useTranslation } from 'next-i18next'
 
 interface RatingProps {
@@ -16,24 +16,27 @@ const Rating: FC<RatingProps> = ({ title, description }) => (
 const AboutUs: FC = () => {
   const { t } = useTranslation('home')
 
-  const RATING_LIST: Array<RatingProps> = [
-    {
-      title: '100%',
-      description: t('about-us__satisfication-level'),
-    },
-    {
-      title: '5.0',
-      description: t('about-us__rating'),
-    },
-    {
-      title: '100%',
-      description: t('about-us__growth-rate'),
-    },
-    {
-      title: '130+',
-      description: t('about-us__doing-projects'),
-    },
-  ]
+  const RATING_LIST = useMemo(
+    (): Array<RatingProps> => [
+      {
+        title: '100%',
+        description: t('about-us__satisfication-level'),
+      },
+      {
+        title: '5.0',
+        description: t('about-us__rating'),
+      },
+      {
+        title: '100%',
+        description: t('about-us__growth-rate'),
+      },
+      {
+        title: '130+',
+        description: t('about-us__doing-projects'),
+      },
+    ],
+    [],
+  )
 
   return (
     <section className='mb-10 lg:mb-20'>
