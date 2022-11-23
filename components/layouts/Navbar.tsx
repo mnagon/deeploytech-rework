@@ -6,6 +6,7 @@ import SwitchThemeButton from '@components/common/SwitchThemeButton'
 import SwitchLocaleButton from '@components/common/SwitchLocaleButton'
 
 import useMediaQuery from '@hooks/useMediaQuery'
+import useIsClient from '@hooks/useIsClient'
 import useIsScrolling from '@hooks/useIsScrolling'
 
 const Navbar: FC = () => {
@@ -13,6 +14,9 @@ const Navbar: FC = () => {
 
   const isLargeScreen = useMediaQuery('(min-width: 1024px)')
   const isScrolling = useIsScrolling()
+  const isClient = useIsClient()
+
+  if (!isClient) return null
 
   return (
     <header
@@ -32,8 +36,8 @@ const Navbar: FC = () => {
           <li></li>
         </ul>
         <div className='flex items-center space-x-4'>
-          <SwitchLocaleButton isScrolling={isScrolling} />
-          <SwitchThemeButton isScrolling={isScrolling} />
+          <SwitchLocaleButton />
+          <SwitchThemeButton className={`${isScrolling ? 'text-primary' : 'text-white'}`} />
         </div>
       </div>
     </header>

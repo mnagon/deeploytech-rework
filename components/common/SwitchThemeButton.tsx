@@ -2,17 +2,13 @@ import { FC } from 'react'
 import { useTheme } from 'next-themes'
 
 import Icon from '@components/common/Icon'
-import useIsClient from '@hooks/useIsClient'
 
 interface SwitchThemeButtonProps {
-  isScrolling: boolean
+  className?: string
 }
 
-const SwitchThemeButton: FC<SwitchThemeButtonProps> = ({ isScrolling }) => {
-  const isClient = useIsClient()
+const SwitchThemeButton: FC<SwitchThemeButtonProps> = ({ className }) => {
   const { theme, setTheme } = useTheme()
-
-  if (!isClient) return null
 
   return (
     <button
@@ -20,17 +16,21 @@ const SwitchThemeButton: FC<SwitchThemeButtonProps> = ({ isScrolling }) => {
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
       {theme === 'dark' && (
-        <span className={`${isScrolling ? 'text-primary' : 'text-white'}`}>
+        <span className={className}>
           <Icon size={20} name='moon' />
         </span>
       )}
       {theme !== 'dark' && (
-        <span className={`${isScrolling ? 'text-primary' : 'text-white'}`}>
+        <span className={className}>
           <Icon size={20} name='sun' />
         </span>
       )}
     </button>
   )
+}
+
+SwitchThemeButton.defaultProps = {
+  className: 'text-white',
 }
 
 export default SwitchThemeButton
