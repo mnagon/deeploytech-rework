@@ -42,7 +42,7 @@ const SoftSkills: FC = () => {
   ]
 
   return (
-    <section className='mb-14 lg:mb-32'>
+    <section id='soft-skills' className='pt-10 pb-10 lg:pt-20 lg:pb-20'>
       <div className='container max-w-7xl'>
         <Headline>{t('soft-skill__title')}</Headline>
         <p className='whitespace-pre-line font-prompt text-2xl font-medium dark:text-white lg:text-3xl'>

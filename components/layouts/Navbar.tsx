@@ -1,5 +1,6 @@
-import { FC } from 'react'
+import { FC, useMemo } from 'react'
 import { useTranslation } from 'next-i18next'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 import Logo from '@components/common/Logo'
@@ -10,14 +11,67 @@ import useMediaQuery from '@hooks/useMediaQuery'
 import useIsClient from '@hooks/useIsClient'
 import useIsScrolling from '@hooks/useIsScrolling'
 
+interface NavItemProps {
+  title: string
+  href: string
+  className?: string
+}
+
+const NavItem: FC<NavItemProps> = ({ title, href, className }) => (
+  <li>
+    <Link
+      href={href}
+      scroll={href === '/'}
+      className={`relative font-prompt uppercase transition-all after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:w-full after:origin-center after:scale-0 after:transition-all after:content-[''] hover:after:scale-100 ${className}`}
+    >
+      {title}
+    </Link>
+  </li>
+)
+
+NavItem.defaultProps = {
+  className: '',
+}
+
 const Navbar: FC = () => {
-  const { t } = useTranslation('home')
+  const { t } = useTranslation('common')
 
   const isLargeScreen = useMediaQuery('(min-width: 1024px)')
   const isScrolling = useIsScrolling()
   const isClient = useIsClient()
 
   if (!isClient) return null
+
+  const NAV_ITEM_LIST = [
+    {
+      title: t('nav__home'),
+      href: '/',
+    },
+    {
+      title: t('nav__about-us'),
+      href: '#about-us',
+    },
+    {
+      title: t('nav__product-support'),
+      href: '#our-product-support',
+    },
+    {
+      title: t('nav__services'),
+      href: '#our-services',
+    },
+    {
+      title: t('nav__works'),
+      href: '#our-services',
+    },
+    {
+      title: t('nav__clients'),
+      href: '#our-services',
+    },
+    {
+      title: t('nav__contact'),
+      href: '#our-services',
+    },
+  ]
 
   return (
     <motion.header
@@ -36,16 +90,23 @@ const Navbar: FC = () => {
           : 'py-5 lg:py-8'
       }`}
     >
-      <div className='container flex max-w-7xl justify-between'>
-        <Logo width={isScrolling || !isLargeScreen ? 100 : 140} />
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-        <div className='flex items-center space-x-4'>
+      <div className='container flex max-w-7xl items-center space-x-6'>
+        <Logo className='mr-auto' width={isScrolling || !isLargeScreen ? 100 : 140} />
+        {isLargeScreen && (
+          <ul
+            className={`flex h-full space-x-6 ${isScrolling ? ' dark:text-white' : 'text-white'}`}
+          >
+            {NAV_ITEM_LIST.map((e) => (
+              <NavItem
+                {...e}
+                key={e.href}
+                className={isScrolling ? 'after:bg-primary hover:text-primary' : ' after:bg-white'}
+              />
+            ))}
+          </ul>
+        )}
+
+        <div className='flex items-center space-x-6 border-l pl-6'>
           <SwitchLocaleButton />
           <SwitchThemeButton className={`${isScrolling ? 'text-primary' : 'text-white'}`} />
         </div>

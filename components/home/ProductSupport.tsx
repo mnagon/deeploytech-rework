@@ -49,27 +49,29 @@ const ProductSupport: FC = () => {
   const { t } = useTranslation('home')
 
   return (
-    <section className='mb-10 bg-neutral-100 py-16 dark:bg-slate-600 lg:mb-20'>
-      <div className='container grid max-w-7xl gap-16 lg:grid-cols-2'>
-        <div>
-          <div className='mb-8 flex justify-center lg:justify-start'>
-            <Image src={PDKM_LOGO} alt='pdkm logo' />
+    <section id='our-product-support' className='pt-12'>
+      <div className='bg-neutral-100 py-16 dark:bg-slate-600'>
+        <div className='container grid max-w-7xl gap-16 lg:grid-cols-2'>
+          <div>
+            <div className='mb-8 flex justify-center lg:justify-start'>
+              <Image src={PDKM_LOGO} alt='pdkm logo' />
+            </div>
+            <div className='grid grid-cols-4 gap-8'>
+              <Image src={DAYWORK_LOGO} alt='daywork logo' />
+              <Image src={YOUNGHAPPY_LOGO} alt='younghappy logo' />
+              <Image src={NEXTATE_LOGO} alt='nextate logo' />
+              <Image src={OURPOINT_LOGO} alt='ourpoint logo' />
+            </div>
           </div>
-          <div className='grid grid-cols-4 gap-8'>
-            <Image src={DAYWORK_LOGO} alt='daywork logo' />
-            <Image src={YOUNGHAPPY_LOGO} alt='younghappy logo' />
-            <Image src={NEXTATE_LOGO} alt='nextate logo' />
-            <Image src={OURPOINT_LOGO} alt='ourpoint logo' />
+          <div className='flex flex-col'>
+            <h2 className='mb-2 text-2xl font-medium dark:text-white lg:mb-4 lg:text-4xl'>
+              {t('product__title1')}
+              <br />
+              <strong className='font-medium  text-primary '>{t('product__title2')}</strong>
+            </h2>
+            <p className='mb-8 text-slate-600 dark:text-white'>{t('product__content')}</p>
+            <PDKMLink>{t('product__button')}</PDKMLink>
           </div>
-        </div>
-        <div className='flex flex-col'>
-          <h2 className='mb-2 text-2xl font-medium dark:text-white lg:mb-4 lg:text-4xl'>
-            {t('product__title1')}
-            <br />
-            <strong className='font-medium  text-primary '>{t('product__title2')}</strong>
-          </h2>
-          <p className='mb-8 text-slate-600 dark:text-white'>{t('product__content')}</p>
-          <PDKMLink>{t('product__button')}</PDKMLink>
         </div>
       </div>
     </section>

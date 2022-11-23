@@ -49,7 +49,7 @@ const Hero: FC = () => {
   const { t } = useTranslation('home')
 
   return (
-    <section className='mb-10 h-96 min-h-screen w-full bg-hero bg-cover bg-fixed bg-center bg-no-repeat lg:mb-20'>
+    <section className='h-96 min-h-screen w-full bg-hero bg-cover bg-fixed bg-center bg-no-repeat'>
       <div className='container relative flex h-full max-w-7xl flex-col items-center justify-center py-32 transition-all duration-300 lg:items-start'>
         <motion.h1
           initial={{

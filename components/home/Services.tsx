@@ -82,7 +82,7 @@ const Services: FC = () => {
   )
 
   return (
-    <section className='mb-10 lg:mb-20'>
+    <section id='our-services' className='pt-10 lg:pt-20'>
       <div className='container max-w-7xl'>
         <Headline>{t('service__title')}</Headline>
         <p className='mb-8 font-prompt text-2xl font-medium dark:text-white lg:mb-4 lg:text-4xl'>
