@@ -1,8 +1,10 @@
-import { FC, PropsWithChildren, useState } from 'react'
+import { FC, PropsWithChildren, useRef } from 'react'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 
 import Icon from '@components/common/Icon'
+
+import useHover from '@hooks/useHover'
 
 import PDKM_LOGO from '@assets/logos/products/pdkm.svg'
 import DAYWORK_LOGO from '@assets/logos/products/daywork.svg'
@@ -11,16 +13,20 @@ import NEXTATE_LOGO from '@assets/logos/products/nextate.svg'
 import OURPOINT_LOGO from '@assets/logos/products/ourpoint.svg'
 
 const PDKMLink: FC<PropsWithChildren> = ({ children }) => {
-  const [isHover, setHover] = useState<boolean>(false)
+  const ref = useRef(null)
+  const isHover = useHover(ref)
 
   return (
     <a
+      ref={ref}
       href='https://www.pdkm.tech/'
       target='_blank'
       rel='noreferrer'
-      className='inline-block w-48 rounded-full border border-primary py-3 text-center text-primary hover:shadow-2xl hover:brightness-125 dark:border-white dark:text-white'
-      onMouseOver={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      className={`inline-block w-48 rounded-full border  py-3 text-center  hover:shadow-2xl hover:brightness-125  ${
+        isHover
+          ? 'border-transparent bg-primary text-white'
+          : 'border-primary text-primary dark:border-white dark:text-white'
+      }`}
     >
       <span
         className={`relative inline-block transition-all duration-200 ${

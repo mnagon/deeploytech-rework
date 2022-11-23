@@ -1,37 +1,29 @@
-import { FC, useState, useEffect } from 'react'
+import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
 
 import Logo from '@components/common/Logo'
 import SwitchThemeButton from '@components/common/SwitchThemeButton'
 import SwitchLocaleButton from '@components/common/SwitchLocaleButton'
 
+import useMediaQuery from '@hooks/useMediaQuery'
+import useIsScrolling from '@hooks/useIsScrolling'
+
 const Navbar: FC = () => {
-  const [isScrolling, setScrolling] = useState<boolean>(false)
   const { t } = useTranslation('home')
 
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset
-    setScrolling(currentScrollPos >= 1)
-  }
-
-  useEffect(() => {
-    if (!window) return
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [typeof window, handleScroll])
+  const isLargeScreen = useMediaQuery('(min-width: 1024px)')
+  const isScrolling = useIsScrolling()
 
   return (
     <header
       className={`fixed top-0 left-0 z-30 w-full transition-all ${
         isScrolling
           ? 'bg-white py-3 shadow dark:border-b dark:border-slate-600 dark:bg-gray-800 dark:shadow-none'
-          : 'py-8'
+          : 'py-5 lg:py-8'
       }`}
     >
       <div className='container flex max-w-7xl justify-between'>
-        <Logo width={isScrolling ? 100 : 140} />
+        <Logo width={isScrolling || !isLargeScreen ? 100 : 140} />
         <ul>
           <li></li>
           <li></li>

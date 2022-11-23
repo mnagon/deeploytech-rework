@@ -19,7 +19,7 @@ const SwitchLocaleButton: FC<SwitchLocaleButtonProps> = ({ isScrolling }) => {
   if (!isClient) return null
 
   return (
-    <Link href='/' locale={locale === 'en' ? 'th' : 'en'}>
+    <Link className='hover:brightness-125' href='/' locale={locale === 'en' ? 'th' : 'en'}>
       <Image
         src={locale === 'en' ? US_FLAG : TH_FLAG}
         alt={locale === 'en' ? 'us flag' : 'th flag'}

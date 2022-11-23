@@ -1,16 +1,18 @@
-import { FC, PropsWithChildren, useState } from 'react'
+import { FC, PropsWithChildren, useRef } from 'react'
 import { useTranslation } from 'next-i18next'
 
 import Icon from '@components/common/Icon'
 
+import useHover from '@hooks/useHover'
+
 const ContactButton: FC<PropsWithChildren> = ({ children }) => {
-  const [isHover, setHover] = useState<boolean>(false)
+  const ref = useRef(null)
+  const isHover = useHover(ref)
 
   return (
     <button
+      ref={ref}
       className='w-40 rounded-full bg-primary py-3 text-white hover:shadow-2xl hover:brightness-125'
-      onMouseOver={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
     >
       <span
         className={`relative inline-block transition-all duration-200 ${
@@ -34,7 +36,7 @@ const Hero: FC = () => {
 
   return (
     <section className='mb-10 h-96 min-h-screen w-full bg-hero bg-cover bg-fixed bg-center bg-no-repeat lg:mb-20'>
-      <div className='container flex h-full max-w-7xl flex-col items-center justify-center py-32 lg:items-start'>
+      <div className='container relative flex h-full max-w-7xl flex-col items-center justify-center py-32 transition-all duration-300 lg:items-start'>
         <h1 className='mb-4 max-w-lg text-center text-4xl font-medium text-white lg:max-w-2xl lg:text-left lg:text-7xl'>
           {t('hero__title')}
         </h1>

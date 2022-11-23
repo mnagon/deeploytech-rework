@@ -15,7 +15,10 @@ const SwitchThemeButton: FC<SwitchThemeButtonProps> = ({ isScrolling }) => {
   if (!isClient) return null
 
   return (
-    <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+    <button
+      className='hover:brightness-125'
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+    >
       {theme === 'dark' && (
         <span className={`${isScrolling ? 'text-primary' : 'text-white'}`}>
           <Icon size={20} name='moon' />
