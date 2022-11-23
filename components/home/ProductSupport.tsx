@@ -18,7 +18,7 @@ const PDKMLink: FC<PropsWithChildren> = ({ children }) => {
       href='https://www.pdkm.tech/'
       target='_blank'
       rel='noreferrer'
-      className='inline-block w-48 rounded-full border border-primary py-3 text-center text-primary hover:shadow-2xl hover:brightness-125'
+      className='inline-block w-48 rounded-full border border-primary py-3 text-center text-primary hover:shadow-2xl hover:brightness-125 dark:border-white dark:text-white'
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -43,7 +43,7 @@ const ProductSupport: FC = () => {
   const { t } = useTranslation('home')
 
   return (
-    <section className='mb-10 bg-neutral-100 py-16 lg:mb-20'>
+    <section className='mb-10 bg-neutral-100 py-16 dark:bg-slate-600 lg:mb-20'>
       <div className='container grid max-w-7xl gap-16 lg:grid-cols-2'>
         <div>
           <div className='mb-8 flex justify-center lg:justify-start'>
@@ -57,12 +57,12 @@ const ProductSupport: FC = () => {
           </div>
         </div>
         <div className='flex flex-col'>
-          <h2 className='mb-2 text-2xl font-semibold lg:mb-4 lg:text-4xl'>
+          <h2 className='mb-2 text-2xl font-semibold dark:text-white lg:mb-4 lg:text-4xl'>
             {t('product__title1')}
             <br />
-            <strong className='font-semibold  text-primary'>{t('product__title2')}</strong>
+            <strong className='font-semibold  text-primary '>{t('product__title2')}</strong>
           </h2>
-          <p className='mb-8 text-slate-600'>{t('product__content')}</p>
+          <p className='mb-8 text-slate-600 dark:text-white'>{t('product__content')}</p>
           <PDKMLink>{t('product__button')}</PDKMLink>
         </div>
       </div>

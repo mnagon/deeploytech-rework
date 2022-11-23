@@ -42,11 +42,13 @@ const AboutUs: FC = () => {
     <section className='mb-10 lg:mb-20'>
       <div className='container flex max-w-7xl flex-col items-center text-center'>
         <h2 className='mb-4 text-sm text-primary'>{t('about-us__title')}</h2>
-        <p className='mb-4 font-prompt text-2xl font-semibold lg:text-4xl'>
+        <p className='mb-4 font-prompt text-2xl font-semibold dark:text-white lg:text-4xl'>
           {t('about-us__subtitle1')}
           <strong className='font-semibold text-primary'>{t('about-us__subtitle2')}</strong>
         </p>
-        <p className='mb-6 text-slate-600  sm:w-3/4 lg:mb-8 lg:w-1/2'>{t('about-us__content')}</p>
+        <p className='mb-6 text-slate-600  dark:text-white sm:w-3/4 lg:mb-8 lg:w-1/2'>
+          {t('about-us__content')}
+        </p>
         <ul className='grid w-full grid-cols-2 gap-12 rounded-2xl bg-primary p-8 lg:grid-cols-4 '>
           {RATING_LIST.map((e, i) => (
             <Rating {...e} key={i} />

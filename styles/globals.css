@@ -7,6 +7,10 @@
 @import './icon.css';
 
 @layer base {
+  * {
+    transition: background-color 0.15s ease-out;
+  }
+
   html {
     font-family: 'Sarabun', sans-serif;
     color: #0a0a0a;

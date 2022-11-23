@@ -15,8 +15,8 @@ const Skill: FC<SkillProps> = ({ icon, title, content }) => (
     <span className='text-primary'>
       <Icon name={icon} size={56} />
     </span>
-    <h3 className='mt-6 mb-2 text-xl font-medium lg:text-2xl'>{title}</h3>
-    <p className='mx-auto max-w-lg text-slate-600'>{content}</p>
+    <h3 className='mt-6 mb-2 text-xl font-medium dark:text-white lg:text-2xl'>{title}</h3>
+    <p className='mx-auto max-w-lg text-slate-600 dark:text-white'>{content}</p>
   </div>
 )
 
@@ -45,7 +45,7 @@ const SoftSkills: FC = () => {
     <section className='mb-10 lg:mb-20'>
       <div className='container max-w-7xl'>
         <Headline>{t('soft-skill__title')}</Headline>
-        <p className='whitespace-pre-line font-prompt text-2xl font-semibold lg:text-3xl'>
+        <p className='whitespace-pre-line font-prompt text-2xl font-semibold dark:text-white lg:text-3xl'>
           {t('soft-skill__content')}
         </p>
         <div className='mt-8 grid gap-16 lg:mt-16 lg:grid-cols-3'>

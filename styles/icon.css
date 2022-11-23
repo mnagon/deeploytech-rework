@@ -77,6 +77,11 @@ i.icon.mobile {
   mask-image: url(../assets/icons/mobile.svg);
 }
 
+i.icon.moon {
+  -webkit-mask-image: url(../assets/icons/moon.svg);
+  mask-image: url(../assets/icons/moon.svg);
+}
+
 i.icon.mornitor-setting {
   -webkit-mask-image: url(../assets/icons/mornitor-setting.svg);
   mask-image: url(../assets/icons/mornitor-setting.svg);
@@ -105,6 +110,10 @@ i.icon.research {
 i.icon.shiny-star {
   -webkit-mask-image: url(../assets/icons/shiny-star.svg);
   mask-image: url(../assets/icons/shiny-star.svg);
+}
+i.icon.sun {
+  -webkit-mask-image: url(../assets/icons/sun.svg);
+  mask-image: url(../assets/icons/sun.svg);
 }
 
 i.icon.swift {
