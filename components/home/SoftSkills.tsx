@@ -45,7 +45,7 @@ const SoftSkills: FC = () => {
     <section className='mb-14 lg:mb-32'>
       <div className='container max-w-7xl'>
         <Headline>{t('soft-skill__title')}</Headline>
-        <p className='whitespace-pre-line font-prompt text-2xl font-semibold dark:text-white lg:text-3xl'>
+        <p className='whitespace-pre-line font-prompt text-2xl font-medium dark:text-white lg:text-3xl'>
           {t('soft-skill__content')}
         </p>
         <div className='mt-10 grid gap-16 lg:mt-20 lg:grid-cols-3'>

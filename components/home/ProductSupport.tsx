@@ -63,10 +63,10 @@ const ProductSupport: FC = () => {
           </div>
         </div>
         <div className='flex flex-col'>
-          <h2 className='mb-2 text-2xl font-semibold dark:text-white lg:mb-4 lg:text-4xl'>
+          <h2 className='mb-2 text-2xl font-medium dark:text-white lg:mb-4 lg:text-4xl'>
             {t('product__title1')}
             <br />
-            <strong className='font-semibold  text-primary '>{t('product__title2')}</strong>
+            <strong className='font-medium  text-primary '>{t('product__title2')}</strong>
           </h2>
           <p className='mb-8 text-slate-600 dark:text-white'>{t('product__content')}</p>
           <PDKMLink>{t('product__button')}</PDKMLink>

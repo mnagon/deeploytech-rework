@@ -16,7 +16,7 @@ const ServiceCard: FC<ServiceCardProps> = ({ icon, title, content }) => (
       <Icon name={icon} size={48} />
     </span>
     <div className='flex flex-col'>
-      <h3 className='text-lg font-semibold dark:text-white'>{title}</h3>
+      <h3 className='text-lg font-medium dark:text-white'>{title}</h3>
       <p className='text-slate-600 dark:text-white'>{content}</p>
     </div>
   </div>
@@ -85,9 +85,9 @@ const Services: FC = () => {
     <section className='mb-10 lg:mb-20'>
       <div className='container max-w-7xl'>
         <Headline>{t('service__title')}</Headline>
-        <p className='mb-8 font-prompt text-2xl font-semibold dark:text-white lg:mb-4 lg:text-4xl'>
+        <p className='mb-8 font-prompt text-2xl font-medium dark:text-white lg:mb-4 lg:text-4xl'>
           {t('service__subtitle1')}
-          <strong className='font-semibold  text-primary'>{t('service__subtitle2')}</strong>
+          <strong className='font-medium  text-primary'>{t('service__subtitle2')}</strong>
         </p>
         <p className='mb-12 text-slate-600 dark:text-white'>{t('service__content')}</p>
         <div className='grid gap-16 lg:grid-cols-2'>
