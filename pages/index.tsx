@@ -6,10 +6,10 @@ import AboutUs from '@components/home/AboutUs'
 import SoftSkills from '@components/home/SoftSkills'
 import ProductSupport from '@components/home/ProductSupport'
 import Services from '@components/home/Services'
-import Integration from '@components/home/Integration'
-import Works from '@components/home/Works'
-import Clients from '@components/home/Clients'
-import Promote from '@components/home/Promote'
+// import Integration from '@components/home/Integration'
+// import Works from '@components/home/Works'
+// import Clients from '@components/home/Clients'
+// import Promote from '@components/home/Promote'
 
 const HomePage: NextPage = () => (
   <>
@@ -18,10 +18,10 @@ const HomePage: NextPage = () => (
     <SoftSkills />
     <ProductSupport />
     <Services />
-    <Integration />
+    {/* <Integration />
     <Works />
     <Clients />
-    <Promote />
+    <Promote /> */}
   </>
 )
 

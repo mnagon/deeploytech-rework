@@ -33,8 +33,8 @@ const Hero: FC = () => {
   const { t } = useTranslation('home')
 
   return (
-    <section className='mb-10 h-96 min-h-screen w-full bg-hero bg-cover bg-fixed bg-center bg-no-repeat py-20 lg:mb-20'>
-      <div className='container flex h-full max-w-7xl flex-col items-center justify-center lg:items-start'>
+    <section className='mb-10 h-96 min-h-screen w-full bg-hero bg-cover bg-fixed bg-center bg-no-repeat lg:mb-20'>
+      <div className='container flex h-full max-w-7xl flex-col items-center justify-center py-32 lg:items-start'>
         <h1 className='mb-4 max-w-lg text-center text-4xl font-medium text-white lg:max-w-2xl lg:text-left lg:text-7xl'>
           {t('hero__title')}
         </h1>
