@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
+import { motion } from 'framer-motion'
 
 import Logo from '@components/common/Logo'
 import SwitchThemeButton from '@components/common/SwitchThemeButton'
@@ -19,7 +20,16 @@ const Navbar: FC = () => {
   if (!isClient) return null
 
   return (
-    <header
+    <motion.header
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.3,
+      }}
       className={`fixed top-0 left-0 z-30 w-full transition-all ${
         isScrolling
           ? 'bg-white py-3 shadow dark:border-b dark:border-slate-600 dark:bg-gray-800 dark:shadow-none'
@@ -40,7 +50,7 @@ const Navbar: FC = () => {
           <SwitchThemeButton className={`${isScrolling ? 'text-primary' : 'text-white'}`} />
         </div>
       </div>
-    </header>
+    </motion.header>
   )
 }
 
