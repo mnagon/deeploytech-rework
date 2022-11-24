@@ -1,10 +1,32 @@
-import { FC, PropsWithChildren, useRef } from 'react'
-import { motion } from 'framer-motion'
+import { FC, PropsWithChildren, useEffect, useRef } from 'react'
+import { motion, useScroll, Variants, useTransform } from 'framer-motion'
 import { useTranslation } from 'next-i18next'
 
 import Icon from '@components/common/Icon'
 
 import useHover from '@hooks/useHover'
+
+const textVariant: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+}
+
+const buttonVariant: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 25,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+}
 
 const ContactButton: FC<PropsWithChildren> = ({ children }) => {
   const ref = useRef(null)
@@ -13,14 +35,9 @@ const ContactButton: FC<PropsWithChildren> = ({ children }) => {
   return (
     <motion.button
       ref={ref}
-      initial={{
-        opacity: 0,
-        y: 25,
-      }}
-      animate={{
-        opacity: 1,
-        y: 0,
-      }}
+      variants={buttonVariant}
+      initial='hidden'
+      animate='visible'
       transition={{
         delay: 0.6,
         duration: 0.3,
@@ -48,18 +65,23 @@ const ContactButton: FC<PropsWithChildren> = ({ children }) => {
 const Hero: FC = () => {
   const { t } = useTranslation('home')
 
+  const ref = useRef(null)
+  const { scrollY } = useScroll({
+    target: ref,
+    offset: ['end end', 'start start'],
+  })
+
+  const opacity = useTransform(scrollY, [150, 0], [0, 1])
   return (
     <section className='h-96 min-h-screen w-full bg-hero bg-cover bg-fixed bg-center bg-no-repeat'>
-      <div className='container relative flex h-full max-w-7xl flex-col items-center justify-center py-32 transition-all duration-300 lg:items-start'>
+      <motion.div
+        style={{ opacity }}
+        className='container relative flex h-full max-w-7xl flex-col items-center justify-center py-32 lg:items-start'
+      >
         <motion.h1
-          initial={{
-            opacity: 0,
-            y: 100,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
+          variants={textVariant}
+          initial='hidden'
+          animate='visible'
           transition={{
             duration: 0.5,
             ease: 'easeOut',
@@ -69,14 +91,9 @@ const Hero: FC = () => {
           {t('hero__title')}
         </motion.h1>
         <motion.p
-          initial={{
-            opacity: 0,
-            y: 100,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
+          variants={textVariant}
+          initial='hidden'
+          animate='visible'
           transition={{
             delay: 0.2,
             duration: 0.5,
@@ -87,7 +104,7 @@ const Hero: FC = () => {
           {t('hero__content')}
         </motion.p>
         <ContactButton>{t('hero__button')}</ContactButton>
-      </div>
+      </motion.div>
     </section>
   )
 }
