@@ -22,7 +22,7 @@ const NavItem: FC<NavItemProps> = ({ title, href, className }) => (
     <Link
       href={href}
       scroll={href === '/'}
-      className={`relative font-prompt uppercase transition-all after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:w-full after:origin-center after:scale-0 after:transition-all after:content-[''] hover:after:scale-100 ${className}`}
+      className={`relative font-prompt text-sm uppercase transition-all after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:w-full after:origin-center after:scale-0 after:transition-all after:content-[''] hover:after:scale-100 ${className}`}
     >
       {title}
     </Link>
@@ -90,23 +90,23 @@ const Navbar: FC = () => {
           : 'py-5 lg:py-8'
       }`}
     >
-      <div className='container flex max-w-7xl items-center space-x-6'>
-        <Logo className='mr-auto' width={isScrolling || !isLargeScreen ? 100 : 140} />
+      <div className='container flex max-w-7xl items-center space-x-4'>
+        <Logo className='mr-auto flex-shrink-0' width={isScrolling || !isLargeScreen ? 100 : 140} />
         {isLargeScreen && (
           <ul
-            className={`flex h-full space-x-6 ${isScrolling ? ' dark:text-white' : 'text-white'}`}
+            className={`flex h-full space-x-4 ${isScrolling ? ' dark:text-white' : 'text-white'}`}
           >
             {NAV_ITEM_LIST.map((e) => (
               <NavItem
                 {...e}
-                key={e.href}
+                key={e.title}
                 className={isScrolling ? 'after:bg-primary hover:text-primary' : ' after:bg-white'}
               />
             ))}
           </ul>
         )}
 
-        <div className='flex items-center space-x-6 border-l pl-6'>
+        <div className='flex flex-shrink-0 items-center space-x-4 pl-4 lg:border-l'>
           <SwitchLocaleButton />
           <SwitchThemeButton className={`${isScrolling ? 'text-primary' : 'text-white'}`} />
         </div>

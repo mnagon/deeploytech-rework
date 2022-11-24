@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
+import { motion } from 'framer-motion'
 
 import Headline from '@components/common/Headline'
 import Icon, { IconName } from '@components/common/Icon'
@@ -43,7 +44,18 @@ const SoftSkills: FC = () => {
 
   return (
     <section id='soft-skills' className='pt-10 pb-10 lg:pt-20 lg:pb-20'>
-      <div className='container max-w-7xl'>
+      <motion.div
+        initial={{
+          opacity: 0,
+        }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          delay: 0.3,
+          duration: 1,
+        }}
+        viewport={{ once: true }}
+        className='container max-w-7xl'
+      >
         <Headline>{t('soft-skill__title')}</Headline>
         <p className='whitespace-pre-line font-prompt text-2xl font-medium dark:text-white lg:text-3xl'>
           {t('soft-skill__content')}
@@ -53,7 +65,7 @@ const SoftSkills: FC = () => {
             <Skill {...e} key={e.title} />
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

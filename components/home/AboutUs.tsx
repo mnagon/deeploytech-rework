@@ -1,37 +1,76 @@
-import { FC, useMemo } from 'react'
+import { FC, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'next-i18next'
+import { motion, animate } from 'framer-motion'
+
+import useIntersectionObserver from '@hooks/useIntersectionObserver'
 
 interface RatingProps {
-  title: string
+  value: number
+  afterValue: string | null
   description: string
 }
 
-const Rating: FC<RatingProps> = ({ title, description }) => (
-  <li className='flex flex-col items-center space-y-1 text-center font-prompt text-white lg:space-y-2'>
-    <span className='text-3xl font-medium lg:text-5xl'>{title}</span>
-    <span className='max-w-[164px] text-sm'>{description}</span>
-  </li>
-)
+const Rating: FC<RatingProps> = ({ value, afterValue, description }) => {
+  const ref = useRef<HTMLLIElement | null>(null)
+  const [isAnimated, setAnimated] = useState<boolean>(false)
+  const [valueText, setValueText] = useState<string>('0')
+  const entry = useIntersectionObserver(ref, {})
+  const isVisible = !!entry?.isIntersecting
 
+  useEffect(() => {
+    if (isVisible && !isAnimated) {
+      setAnimated(true)
+      animate(0, value, {
+        duration: 1.5,
+        ease: 'easeOut',
+        onUpdate(value) {
+          setValueText(afterValue ? `${value.toFixed(0)}${afterValue}` : `${value.toFixed(1)}`)
+        },
+      })
+    }
+  }, [isVisible])
+
+  return (
+    <motion.li
+      ref={ref}
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{ opacity: 1 }}
+      transition={{
+        duration: 0.7,
+      }}
+      viewport={{ once: true }}
+      className='flex flex-col items-center space-y-1 text-center font-prompt text-white lg:space-y-2'
+    >
+      <span className='text-3xl font-medium lg:text-5xl'>{valueText}</span>
+      <span className='max-w-[164px] text-sm'>{description}</span>
+    </motion.li>
+  )
+}
 const AboutUs: FC = () => {
   const { t } = useTranslation('home')
 
   const RATING_LIST = useMemo(
     (): Array<RatingProps> => [
       {
-        title: '100%',
+        value: 100,
+        afterValue: '%',
         description: t('about-us__satisfication-level'),
       },
       {
-        title: '5.0',
+        value: 5,
+        afterValue: null,
         description: t('about-us__rating'),
       },
       {
-        title: '100%',
+        value: 100,
+        afterValue: '%',
         description: t('about-us__growth-rate'),
       },
       {
-        title: '130+',
+        value: 130,
+        afterValue: '+',
         description: t('about-us__doing-projects'),
       },
     ],
