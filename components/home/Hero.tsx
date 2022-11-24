@@ -9,22 +9,22 @@ import useHover from '@hooks/useHover'
 const textVariant: Variants = {
   hidden: {
     opacity: 0,
-    y: 100,
+    x: -100,
   },
   visible: {
     opacity: 1,
-    y: 0,
+    x: 0,
   },
 }
 
 const buttonVariant: Variants = {
   hidden: {
     opacity: 0,
-    y: 25,
+    x: -25,
   },
   visible: {
     opacity: 1,
-    y: 0,
+    x: 0,
   },
 }
 
