@@ -33,6 +33,18 @@ NavItem.defaultProps = {
   className: '',
 }
 
+const navVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+}
+
 const Navbar: FC = () => {
   const { t } = useTranslation('common')
 
@@ -75,15 +87,9 @@ const Navbar: FC = () => {
 
   return (
     <motion.header
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 0.3,
-      }}
+      variants={navVariant}
+      initial='hidden'
+      animate='visible'
       className={`fixed top-0 left-0 z-30 w-full transition-all ${
         isScrolling
           ? 'bg-white py-3 shadow dark:border-b dark:border-slate-600 dark:bg-gray-800 dark:shadow-none'
