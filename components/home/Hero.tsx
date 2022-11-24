@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useEffect, useRef } from 'react'
+import { FC, PropsWithChildren, useRef } from 'react'
 import { motion, useScroll, Variants, useTransform } from 'framer-motion'
 import { useTranslation } from 'next-i18next'
 
