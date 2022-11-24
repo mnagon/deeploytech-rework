@@ -10,7 +10,7 @@ import Services from '@components/home/Services'
 import Integration from '@components/home/Integration'
 import Works from '@components/home/Works'
 import Clients from '@components/home/Clients'
-// import Promote from '@components/home/Promote'
+import Promote from '@components/home/Promote'
 
 const HomePage: NextPage = () => (
   <>
@@ -26,8 +26,7 @@ const HomePage: NextPage = () => (
     <Integration />
     <Works />
     <Clients />
-    {/* 
-    <Promote /> */}
+    <Promote />
   </>
 )
 

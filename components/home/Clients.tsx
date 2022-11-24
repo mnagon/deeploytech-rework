@@ -21,6 +21,37 @@ import CHEEVAMITR_LOGO from '@assets/logos/clients/cheevamitr.svg'
 import MEMORIZE_LOGO from '@assets/logos/clients/memorize.svg'
 import QUEQ_LOGO from '@assets/logos/clients/queq.svg'
 
+interface CustomMarqueeProps {
+  direction: 'left' | 'right'
+  itemList: Array<string>
+}
+
+const CustomMarquee: FC<CustomMarqueeProps> = ({ direction, itemList }) => {
+  const { theme } = useTheme()
+  const isLargeScreen = useMediaQuery('(min-width: 1024px)')
+
+  return (
+    <Marquee
+      direction={direction}
+      speed={30}
+      gradientColor={theme === 'dark' ? [31, 41, 55] : [255, 255, 255]}
+      gradientWidth={isLargeScreen ? 300 : 20}
+      className='mt-12'
+    >
+      {itemList.map((e) => (
+        <div
+          className='mx-2 flex h-16 w-28 items-center justify-center rounded bg-white p-1 lg:mx-4 lg:h-20 lg:w-40 lg:p-2 '
+          key={e}
+        >
+          <div className='relative h-full w-full'>
+            <Image src={e} alt='client logo' fill />
+          </div>
+        </div>
+      ))}
+    </Marquee>
+  )
+}
+
 const CLIENT_LIST = [
   ANYA_LOGO,
   DAY9_LOGO,
@@ -42,53 +73,16 @@ const CLIENT_LIST2 = [
 
 const Clients: FC = () => {
   const { t } = useTranslation('home')
-  const { theme } = useTheme()
-  const isLargeScreen = useMediaQuery('(min-width: 1024px)')
-
   return (
-    <section id='clients'>
+    <section id='clients' className='pt-10 pb-14 lg:pt-14 lg:pb-24'>
       <div className='container max-w-7xl'>
         <Headline>{t('clients__title')}</Headline>
         <p className='font-prompt text-2xl font-medium dark:text-white lg:text-2xl'>
           {t('clients__subtitle')}
         </p>
-        <p className='mt-8 text-slate-800 dark:text-white'>{t('clients__content')}</p>
-        <Marquee
-          pauseOnHover
-          speed={30}
-          gradientColor={theme === 'dark' ? [31, 41, 55] : [248, 251, 253]}
-          className='mt-20'
-        >
-          {CLIENT_LIST.map((e) => (
-            <div
-              className='mx-2 flex h-16 w-28 items-center justify-center rounded bg-white p-1 lg:mx-4 lg:h-20 lg:w-40 lg:p-2 '
-              key={e}
-            >
-              <div className='relative h-full w-full'>
-                <Image src={e} alt='client logo' fill />
-              </div>
-            </div>
-          ))}
-        </Marquee>
-        <Marquee
-          pauseOnHover
-          direction='right'
-          speed={30}
-          gradientColor={theme === 'dark' ? [31, 41, 55] : [255, 255, 255]}
-          gradientWidth={isLargeScreen ? 300 : 20}
-          className='mt-12'
-        >
-          {CLIENT_LIST2.map((e) => (
-            <div
-              className='mx-2 flex h-16 w-28 items-center justify-center rounded bg-white p-1 lg:mx-4 lg:h-20 lg:w-40 lg:p-2 '
-              key={e}
-            >
-              <div className='relative h-full w-full'>
-                <Image src={e} alt='client logo' fill />
-              </div>
-            </div>
-          ))}
-        </Marquee>
+        <p className='mt-8 mb-20 text-slate-800 dark:text-white'>{t('clients__content')}</p>
+        <CustomMarquee direction='left' itemList={CLIENT_LIST} />
+        <CustomMarquee direction='right' itemList={CLIENT_LIST2} />
       </div>
     </section>
   )

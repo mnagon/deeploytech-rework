@@ -77,11 +77,11 @@ const Navbar: FC = () => {
     },
     {
       title: t('nav__clients'),
-      href: '#our-services',
+      href: '#clients',
     },
     {
       title: t('nav__contact'),
-      href: '#our-services',
+      href: '#contact',
     },
   ]
 
