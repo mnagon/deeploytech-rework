@@ -12,3 +12,7 @@ Try to improve deeploytech website, Make it more UX/UI friendly and add translat
 - [Tailwind](https://tailwindcss.com/docs/installation)
 - [i18next](https://github.com/i18next/next-i18next)
 - [Framer Motion](https://www.framer.com/docs/)
+
+## Demo
+
+- [Demo Link](https://deeploytech-rework-git-main-mnagon.vercel.app/)
