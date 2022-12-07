@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo, useRef, useState } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import { motion, animate } from 'framer-motion'
 
@@ -51,31 +51,28 @@ const Rating: FC<RatingProps> = ({ value, afterValue, description }) => {
 const AboutUs: FC = () => {
   const { t } = useTranslation('home')
 
-  const RATING_LIST = useMemo(
-    (): Array<RatingProps> => [
-      {
-        value: 100,
-        afterValue: '%',
-        description: t('about-us__satisfication-level'),
-      },
-      {
-        value: 5,
-        afterValue: null,
-        description: t('about-us__rating'),
-      },
-      {
-        value: 100,
-        afterValue: '%',
-        description: t('about-us__growth-rate'),
-      },
-      {
-        value: 130,
-        afterValue: '+',
-        description: t('about-us__doing-projects'),
-      },
-    ],
-    [],
-  )
+  const RATING_LIST: Array<RatingProps> = [
+    {
+      value: 100,
+      afterValue: '%',
+      description: t('about-us__satisfication-level'),
+    },
+    {
+      value: 5,
+      afterValue: null,
+      description: t('about-us__rating'),
+    },
+    {
+      value: 100,
+      afterValue: '%',
+      description: t('about-us__growth-rate'),
+    },
+    {
+      value: 130,
+      afterValue: '+',
+      description: t('about-us__doing-projects'),
+    },
+  ]
 
   return (
     <section id='about-us' className='pt-10 lg:pt-20'>

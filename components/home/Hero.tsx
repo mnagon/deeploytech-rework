@@ -33,9 +33,10 @@ const ContactButton: FC<PropsWithChildren> = ({ children }) => {
   const isHover = useHover(ref)
 
   return (
-    <motion.button
+    <motion.a
       ref={ref}
       variants={buttonVariant}
+      href='/#contact'
       initial='hidden'
       animate='visible'
       transition={{
@@ -43,7 +44,7 @@ const ContactButton: FC<PropsWithChildren> = ({ children }) => {
         duration: 0.3,
         ease: 'easeOut',
       }}
-      className='w-40 rounded-full bg-primary py-3 text-white hover:shadow-2xl hover:brightness-125'
+      className='inline-block w-40 cursor-pointer rounded-full bg-primary py-3 text-center text-white hover:shadow-2xl hover:brightness-125'
     >
       <span
         className={`relative inline-block transition-all duration-200 ${
@@ -58,7 +59,7 @@ const ContactButton: FC<PropsWithChildren> = ({ children }) => {
           isHover ? 'opacity-100' : 'ml-0 opacity-0'
         }`}
       />
-    </motion.button>
+    </motion.a>
   )
 }
 
