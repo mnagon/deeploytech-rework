@@ -22,7 +22,7 @@ const PDKMLink: FC<PropsWithChildren> = ({ children }) => {
       href='https://www.pdkm.tech/'
       target='_blank'
       rel='noreferrer'
-      className={`inline-block w-48 rounded-full border  py-3 text-center  hover:shadow-2xl hover:brightness-125  ${
+      className={`inline-block w-48 rounded-full border py-3 text-center hover:shadow-2xl hover:brightness-125  ${
         isHover
           ? 'border-transparent bg-primary text-white'
           : 'border-primary text-primary dark:border-white dark:text-white'
@@ -67,7 +67,7 @@ const ProductSupport: FC = () => {
             <h2 className='mb-2 text-2xl font-medium dark:text-white lg:mb-4 lg:text-4xl'>
               {t('product__title1')}
               <br />
-              <strong className='font-medium  text-primary '>{t('product__title2')}</strong>
+              <strong className='font-medium  text-primary'>{t('product__title2')}</strong>
             </h2>
             <p className='mb-8 text-slate-600 dark:text-white'>{t('product__content')}</p>
             <PDKMLink>{t('product__button')}</PDKMLink>

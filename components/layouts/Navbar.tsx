@@ -1,4 +1,4 @@
-import { FC, useMemo } from 'react'
+import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -96,7 +96,7 @@ const Navbar: FC = () => {
           : 'py-5 lg:py-8'
       }`}
     >
-      <div className='container flex max-w-7xl items-center space-x-4'>
+      <nav className='container flex max-w-7xl items-center space-x-4'>
         <Logo className='mr-auto flex-shrink-0' width={isScrolling || !isLargeScreen ? 100 : 140} />
         {isLargeScreen && (
           <ul
@@ -116,7 +116,7 @@ const Navbar: FC = () => {
           <SwitchLocaleButton />
           <SwitchThemeButton className={`${isScrolling ? 'text-primary' : 'text-white'}`} />
         </div>
-      </div>
+      </nav>
     </motion.header>
   )
 }
