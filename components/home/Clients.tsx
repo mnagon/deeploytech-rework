@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Marquee from 'react-fast-marquee'
 import { useTheme } from 'next-themes'
 
@@ -8,22 +8,25 @@ import Headline from '@components/common/Headline'
 
 import useMediaQuery from '@hooks/useMediaQuery'
 
-import ANYA_LOGO from '@assets/logos/clients/anya.svg'
-import DAY9_LOGO from '@assets/logos/clients/day9.svg'
-import DOAE_LOGO from '@assets/logos/clients/doae.svg'
-import DTAC_LOGO from '@assets/logos/clients/dtac.svg'
-import FUTURE_SKILLS_LOGO from '@assets/logos/clients/future-skills.svg'
-import PEA_LOGO from '@assets/logos/clients/pea.svg'
-import SKYLLER_LOGO from '@assets/logos/clients/skyller.svg'
-import BOOKFIRST_LOGO from '@assets/logos/clients/bookfirst.svg'
-import LING_LOGO from '@assets/logos/clients/ling.svg'
-import CHEEVAMITR_LOGO from '@assets/logos/clients/cheevamitr.svg'
-import MEMORIZE_LOGO from '@assets/logos/clients/memorize.svg'
-import QUEQ_LOGO from '@assets/logos/clients/queq.svg'
+import ANYA_LOGO from '@assets/logos/clients/anya.png'
+import DAY9_LOGO from '@assets/logos/clients/day9.png'
+import DOAE_LOGO from '@assets/logos/clients/doae.png'
+import DTAC_LOGO from '@assets/logos/clients/dtac.png'
+import FUTURE_SKILLS_LOGO from '@assets/logos/clients/future-skills.png'
+import PEA_LOGO from '@assets/logos/clients/pea.png'
+import SKYLLER_LOGO from '@assets/logos/clients/skyller.png'
+import BOOKFIRST_LOGO from '@assets/logos/clients/bookfirst.png'
+import LING_LOGO from '@assets/logos/clients/ling.png'
+import CHEEVAMITR_LOGO from '@assets/logos/clients/cheevamitr.png'
+import MEMORIZE_LOGO from '@assets/logos/clients/memorize.png'
+import QUEQ_LOGO from '@assets/logos/clients/queq.png'
+
+import YOUNGHAPPY_LOGO from '@assets/logos/clients/younghappy.png'
+import NUDD_LOGO from '@assets/logos/clients/nudd.png'
 
 interface CustomMarqueeProps {
   direction: 'left' | 'right'
-  itemList: Array<string>
+  itemList: Array<StaticImageData>
 }
 
 const CustomMarquee: FC<CustomMarqueeProps> = ({ direction, itemList }) => {
@@ -38,13 +41,13 @@ const CustomMarquee: FC<CustomMarqueeProps> = ({ direction, itemList }) => {
       gradientWidth={isLargeScreen ? 300 : 20}
       className='mt-12'
     >
-      {itemList.map((e) => (
+      {itemList.map((e, index) => (
         <div
           className='mx-2 flex h-16 w-28 items-center justify-center rounded bg-white p-1 lg:mx-4 lg:h-20 lg:w-40 lg:p-2 '
-          key={e}
+          key={index}
         >
-          <div className='relative h-full w-full'>
-            <Image src={e} alt='client logo' fill />
+          <div className='relative h-full max-h-[60px] w-full max-w-[85px]'>
+            <Image src={e} alt='client logo' fill objectFit='contain' />
           </div>
         </div>
       ))}
@@ -53,7 +56,7 @@ const CustomMarquee: FC<CustomMarqueeProps> = ({ direction, itemList }) => {
 }
 
 const CLIENT_LIST = [
-  ANYA_LOGO,
+  YOUNGHAPPY_LOGO,
   DAY9_LOGO,
   DOAE_LOGO,
   SKYLLER_LOGO,
@@ -62,7 +65,7 @@ const CLIENT_LIST = [
   PEA_LOGO,
 ]
 const CLIENT_LIST2 = [
-  SKYLLER_LOGO,
+  NUDD_LOGO,
   BOOKFIRST_LOGO,
   LING_LOGO,
   CHEEVAMITR_LOGO,
