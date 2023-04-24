@@ -10,7 +10,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#3b82f6',
+        primary: '#53B9A4',
       },
       fontFamily: {
         prompt: 'Prompt, sans-serif;',
