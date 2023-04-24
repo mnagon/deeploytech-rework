@@ -94,7 +94,7 @@ const Navbar: FC = () => {
       animate='visible'
       className={`fixed top-0 left-0 z-30 w-full transition-all ${
         isScrolling
-          ? 'bg-white py-3 shadow dark:border-b dark:border-slate-600 dark:bg-gray-800 dark:shadow-none'
+          ? 'bg-white py-3 shadow dark:border-b dark:border-slate-600 dark:bg-[#0E2C38] dark:shadow-none'
           : 'py-5 lg:py-8'
       }`}
     >
