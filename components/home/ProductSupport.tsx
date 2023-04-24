@@ -6,11 +6,11 @@ import Icon from '@components/common/Icon'
 
 import useHover from '@hooks/useHover'
 
-import PDKM_LOGO from '@assets/logos/products/pdkm.svg'
-import DAYWORK_LOGO from '@assets/logos/products/daywork.svg'
-import YOUNGHAPPY_LOGO from '@assets/logos/products/younghappy.svg'
-import NEXTATE_LOGO from '@assets/logos/products/nextate.svg'
-import OURPOINT_LOGO from '@assets/logos/products/ourpoint.svg'
+import PDKM_LOGO from '@assets/logos/products/pdkm.png'
+import DAYWORK_LOGO from '@assets/logos/products/daywork.png'
+import YOUNGHAPPY_LOGO from '@assets/logos/products/younghappy.png'
+import NEXTATE_LOGO from '@assets/logos/products/nextate.png'
+import OURPOINT_LOGO from '@assets/logos/products/ourpoint.png'
 
 const PDKMLink: FC<PropsWithChildren> = ({ children }) => {
   const ref = useRef(null)
