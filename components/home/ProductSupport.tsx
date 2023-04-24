@@ -20,6 +20,7 @@ const PDKMLink: FC<PropsWithChildren> = ({ children }) => {
     <a
       ref={ref}
       href='https://www.pdkm.tech/'
+      title='Go to PDKM website'
       target='_blank'
       rel='noreferrer'
       className={`inline-block w-48 rounded-full border py-3 text-center hover:shadow-2xl hover:brightness-125  ${
@@ -54,13 +55,13 @@ const ProductSupport: FC = () => {
         <div className='container grid max-w-7xl gap-16 lg:grid-cols-2'>
           <div>
             <div className='mb-8 flex justify-center lg:justify-start'>
-              <Image src={PDKM_LOGO} alt='pdkm logo' />
+              <Image src={PDKM_LOGO} alt='pdkm logo' title='pdkm logo' />
             </div>
             <div className='grid grid-cols-4 gap-8'>
-              <Image src={DAYWORK_LOGO} alt='daywork logo' />
-              <Image src={YOUNGHAPPY_LOGO} alt='younghappy logo' />
-              <Image src={NEXTATE_LOGO} alt='nextate logo' />
-              <Image src={OURPOINT_LOGO} alt='ourpoint logo' />
+              <Image src={DAYWORK_LOGO} alt='daywork logo' title='daywork logo' />
+              <Image src={YOUNGHAPPY_LOGO} alt='younghappy logo' title='younghappy logo' />
+              <Image src={NEXTATE_LOGO} alt='nextate logo' title='nextate logo' />
+              <Image src={OURPOINT_LOGO} alt='ourpoint logo' title='ourpoint logo' />
             </div>
           </div>
           <div className='flex flex-col'>

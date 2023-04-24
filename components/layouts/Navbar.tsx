@@ -24,6 +24,7 @@ const NavItem: FC<NavItemProps> = ({ title, href, className }) => (
       href={href}
       scroll={href === '/'}
       className={`relative font-prompt text-sm uppercase transition-all after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:w-full after:origin-center after:scale-0 after:transition-all after:content-[''] hover:after:scale-100 ${className}`}
+      title={`Go to ${title} section`}
     >
       {title}
     </Link>

@@ -12,7 +12,12 @@ const Promote: FC = () => {
       <div className='container max-w-7xl pt-12 text-center text-white lg:pt-24'>
         <h2 className='mb-4 text-xl font-medium lg:text-3xl'>{t('promote__title')}</h2>
         <p>{t('promote__content')}</p>
-        <Image className='mt-12 lg:mt-20' src={PROMOTE_IMAGE} alt='promote image' />
+        <Image
+          className='mt-12 lg:mt-20'
+          src={PROMOTE_IMAGE}
+          alt='promote image'
+          title='promote image'
+        />
       </div>
     </section>
   )

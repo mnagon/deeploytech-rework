@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
 import Headline from '@components/common/Headline'
 
@@ -25,16 +25,16 @@ import CHEEVAMITR_IMAGE from '@assets/images/works/cheevamitr.jpg'
 interface ProjectCardProps {
   title: string
   type: string
-  logo: string
-  image: string
+  logo: StaticImageData
+  image: StaticImageData
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({ title, type, logo, image }) => (
   <div className='overflow-hidden rounded-lg bg-[#f5f5f5] p-2'>
-    <Image className='mx-auto' src={image} alt={title + ' image'} />
+    <Image className='mx-auto' src={image} alt={title + ' image'} title={title + ' image'} />
     <div className='mx-auto mt-5 flex max-w-md'>
       <div className='flex w-32 flex-shrink-0 items-start justify-center py-2 px-4'>
-        <Image src={logo} alt={title + ' logo'} />
+        <Image src={logo} alt={title + ' logo'} title={title + ' logo'} />
       </div>
       <div className='col-span-2 flex flex-grow flex-col'>
         <h3 className='text-lg font-semibold'>{title}</h3>

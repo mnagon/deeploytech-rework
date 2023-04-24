@@ -47,7 +47,7 @@ const CustomMarquee: FC<CustomMarqueeProps> = ({ direction, itemList }) => {
           key={index}
         >
           <div className='relative h-full max-h-[60px] w-full max-w-[85px]'>
-            <Image src={e} alt='client logo' fill objectFit='contain' />
+            <Image src={e} alt='client logo' title='client logo' fill objectFit='contain' />
           </div>
         </div>
       ))}

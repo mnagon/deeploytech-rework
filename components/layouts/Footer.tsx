@@ -11,7 +11,7 @@ const Footer: FC = () => {
         <h2 className='whitespace-pre-line font-prompt text-5xl font-medium dark:text-white'>
           {t('footer__title')}
         </h2>
-        <Link className='text-prompt underline dark:text-white' href='/'>
+        <Link className='text-prompt underline dark:text-white' href='/' title='Go to home page'>
           {t('footer__back-to-top__button')}
         </Link>
         <div className='grid gap-8 lg:grid-cols-4'>
@@ -42,6 +42,7 @@ const Footer: FC = () => {
               target='_blank'
               rel='noreferrer'
               className='text-slate-600 dark:text-white'
+              title='Go to deeploytech facebook page'
             >
               Facebook
             </a>

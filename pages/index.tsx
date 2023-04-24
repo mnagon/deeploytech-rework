@@ -17,6 +17,10 @@ const HomePage: NextPage = () => (
     <Head>
       <title>Deeploy technology Make Solution for Your Business</title>
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      <meta
+        name='description'
+        content='You’re here because you need or looking for creative software development team. We can be your solution. And we will provide a software that belongs to you.'
+      />
     </Head>
     <Hero />
     <AboutUs />

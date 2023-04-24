@@ -38,10 +38,15 @@ const SwitchLocaleButton: FC = () => {
         key={locale}
         className='hover:brightness-125'
       >
-        <Link href='/' locale={locale === 'en' ? 'th' : 'en'}>
+        <Link
+          href='/'
+          locale={locale === 'en' ? 'th' : 'en'}
+          title={`Translate to ${locale === 'en' ? 'english' : 'thai'} language`}
+        >
           <Image
             src={locale === 'en' ? US_FLAG : TH_FLAG}
             alt={locale === 'en' ? 'us flag' : 'th flag'}
+            title={locale === 'en' ? 'us flag' : 'th flag'}
             width={20}
             height={20}
           />

@@ -13,10 +13,15 @@ interface LogoProps {
 
 const Logo: FC<LogoProps> = ({ className, width, light }) => {
   return (
-    <Link href='/' className={`transition-all hover:brightness-110 ${className}`}>
+    <Link
+      href='/'
+      className={`transition-all hover:brightness-110 ${className}`}
+      title='Go to home page'
+    >
       <Image
         src={light ? LOGO_LIGHT : LOGO}
         alt='deeploytech logo'
+        title='deeploytech logo'
         className='transition-all'
         width={width}
       />
