@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line no-undef
 module.exports = {
   darkMode: 'class',
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -16,7 +17,7 @@ module.exports = {
         sarabun: 'Sarabun, sans-serif;',
       },
       backgroundImage: {
-        hero: "url('/images/hero-background.png')",
+        hero: 'url("/images/hero-background.png")',
       },
     },
   },
