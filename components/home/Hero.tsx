@@ -3,6 +3,7 @@ import { motion, useScroll, Variants, useTransform } from 'framer-motion'
 import { useTranslation } from 'next-i18next'
 
 import Icon from '@components/common/Icon'
+import BACKGROUND_IMAGE from '@assets/images/hero-background.jpg'
 
 import useHover from '@hooks/useHover'
 
@@ -74,7 +75,10 @@ const Hero: FC = () => {
 
   const opacity = useTransform(scrollY, [150, 0], [0, 1])
   return (
-    <section className='h-96 min-h-screen w-full bg-hero bg-cover bg-fixed bg-center bg-no-repeat'>
+    <section
+      className='h-96 min-h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat'
+      style={{ backgroundImage: `url(${BACKGROUND_IMAGE.src})` }}
+    >
       <motion.div
         style={{ opacity }}
         className='container relative flex h-full max-w-7xl flex-col items-center justify-center py-32 lg:items-start'
