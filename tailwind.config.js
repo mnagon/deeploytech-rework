@@ -17,7 +17,7 @@ module.exports = {
         sarabun: 'Sarabun, sans-serif;',
       },
       backgroundImage: {
-        hero: 'url("/images/hero-background.png")',
+        hero: 'url("/images/hero-background.jpg")',
       },
     },
   },
