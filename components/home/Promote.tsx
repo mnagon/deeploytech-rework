@@ -2,7 +2,7 @@ import { FC } from 'react'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 
-import PROMOTE_IMAGE from '@assets/images/promote-image.svg'
+import PROMOTE_IMAGE from '@assets/images/promote-image.png'
 
 const Promote: FC = () => {
   const { t } = useTranslation('home')
