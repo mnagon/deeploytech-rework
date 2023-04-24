@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useTheme } from 'next-themes'
 
 import Logo from '@components/common/Logo'
 import SwitchThemeButton from '@components/common/SwitchThemeButton'
@@ -47,6 +48,7 @@ const navVariant = {
 
 const Navbar: FC = () => {
   const { t } = useTranslation('common')
+  const { theme } = useTheme()
 
   const isLargeScreen = useMediaQuery('(min-width: 1024px)')
   const isScrolling = useIsScrolling()
@@ -97,7 +99,11 @@ const Navbar: FC = () => {
       }`}
     >
       <nav className='container flex max-w-7xl items-center space-x-4'>
-        <Logo className='mr-auto flex-shrink-0' width={isScrolling || !isLargeScreen ? 100 : 140} />
+        <Logo
+          className='mr-auto flex-shrink-0'
+          light={!isScrolling || theme === 'dark'}
+          width={isScrolling || !isLargeScreen ? 100 : 140}
+        />
         {isLargeScreen && (
           <ul
             className={`flex h-full space-x-4 ${isScrolling ? ' dark:text-white' : 'text-white'}`}
