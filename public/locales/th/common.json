@@ -1,17 +1,17 @@
 {
-  "nav__home": "หน้าแรก",
-  "nav__about-us": "เกี่ยวกับเรา",
-  "nav__product-support": "ผลิตภัณฑ์ของเรา",
+  "nav__home": "หน้าหลัก",
+  "nav__about-us": "เกี่ยวกับพวกเรา",
+  "nav__product-support": "งานซัพพอร์ตของเรา",
   "nav__services": "บริการ",
-  "nav__works": "ผลงาน",
+  "nav__works": "งานของเรา",
   "nav__clients": "ลูกค้าของเรา",
   "nav__contact": "ติดต่อเรา",
-  "footer__title": "มาเริ่มสร้าง\r\n สิ่งดี ๆ ร่วมกันกับเรา!",
+  "footer__title": "พร้อมลุยไปสู่เป้าหมายด้วยกัน",
   "footer__back-to-top__button": "กลับสู่ด้านบน",
-  "footer__invite": "ร่วมพูดคุยและทำงานกับเรา",
+  "footer__invite": "มาพูดคุย และร่วมมือกัยเรา",
   "footer__contact__headline": "ติดต่อ",
-  "footer__contact__content": "อาคารอำนวยการอุทยานวิทยาศาสตร์ภาคเหนือ, ตึก D303 เชียงใหม่, ประเทศไทย 50100",
+  "footer__contact__content": "อาคารอุทยานวิทยาศาสตร์ ภาคเหนือ, D303 เชียงใหม่, ประเทศไทย 50100",
   "footer__office-time__headline": "เวลาทำการ",
-  "footer__office-time__content": "(จันทร์ – ศุกร์)",
-  "footer__social__headline": "โซเชียลมีเดีย"
+  "footer__office-time__content": "(วันจันทร์ – วันศุกร์)",
+  "footer__social__headline": "ไปยังสื่ออื่นๆ"
 }
