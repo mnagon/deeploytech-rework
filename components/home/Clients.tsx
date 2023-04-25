@@ -37,7 +37,7 @@ const CustomMarquee: FC<CustomMarqueeProps> = ({ direction, itemList }) => {
     <Marquee
       direction={direction}
       speed={30}
-      gradientColor={theme === 'dark' ? [31, 41, 55] : [255, 255, 255]}
+      gradientColor={theme === 'dark' ? [14, 44, 56] : [255, 255, 255]}
       gradientWidth={isLargeScreen ? 300 : 20}
       className='mt-12'
     >

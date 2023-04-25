@@ -66,11 +66,7 @@ const ContactButton: FC<PropsWithChildren> = ({ children }) => {
 const Hero: FC = () => {
   const { t } = useTranslation('home')
 
-  const ref = useRef(null)
-  const { scrollY } = useScroll({
-    target: ref,
-    offset: ['end end', 'start start'],
-  })
+  const { scrollY } = useScroll()
 
   const opacity = useTransform(scrollY, [150, 0], [0, 1])
   return (
