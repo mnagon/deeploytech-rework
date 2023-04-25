@@ -75,7 +75,7 @@ const AboutUs: FC = () => {
   ]
 
   return (
-    <section id='about-us' className='pt-10 lg:pt-20'>
+    <section id='about-us' className='bg-white pt-10 transition-all dark:bg-[#0E2C38] lg:pt-20'>
       <div className='container flex max-w-7xl flex-col items-center text-center'>
         <h2 className='mb-4 text-sm text-primary'>{t('about-us__title')}</h2>
         <p className='mb-4 font-prompt text-2xl font-medium dark:text-white lg:text-4xl'>

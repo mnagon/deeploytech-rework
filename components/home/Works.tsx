@@ -105,7 +105,7 @@ const Works: FC = () => {
   const { t } = useTranslation('home')
 
   return (
-    <section id='my-works' className='pt-10 lg:pt-14'>
+    <section id='my-works' className='bg-white pt-10 transition-all dark:bg-[#0E2C38] lg:pt-14'>
       <div className='container max-w-7xl'>
         <Headline>{t('works__title')}</Headline>
         <p className='mb-2 font-prompt text-2xl font-medium dark:text-white lg:mb-4 lg:text-4xl'>

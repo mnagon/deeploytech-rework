@@ -47,7 +47,14 @@ const CustomMarquee: FC<CustomMarqueeProps> = ({ direction, itemList }) => {
           key={index}
         >
           <div className='relative h-full max-h-[60px] w-full max-w-[85px]'>
-            <Image src={e} alt='client logo' title='client logo' fill objectFit='contain' />
+            <Image
+              src={e}
+              alt='client logo'
+              title='client logo'
+              fill
+              unoptimized
+              objectFit='contain'
+            />
           </div>
         </div>
       ))}
@@ -77,7 +84,10 @@ const CLIENT_LIST2 = [
 const Clients: FC = () => {
   const { t } = useTranslation('home')
   return (
-    <section id='clients' className='pt-10 pb-14 lg:pt-14 lg:pb-24'>
+    <section
+      id='clients'
+      className='bg-white pt-10 pb-14 transition-all dark:bg-[#0E2C38] lg:pt-14 lg:pb-24'
+    >
       <div className='container max-w-7xl'>
         <Headline>{t('clients__title')}</Headline>
         <p className='font-prompt text-2xl font-medium dark:text-white lg:text-2xl'>
