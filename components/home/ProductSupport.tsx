@@ -50,7 +50,7 @@ const ProductSupport: FC = () => {
   const { t } = useTranslation('home')
 
   return (
-    <section id='our-product-support' className='pt-12'>
+    <section id='our-product-support' className='bg-white pt-12 transition-all dark:bg-[#0E2C38]'>
       <div className='bg-neutral-100 py-16 dark:bg-slate-600'>
         <div className='container grid max-w-7xl gap-16 lg:grid-cols-2'>
           <div>

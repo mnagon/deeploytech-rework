@@ -6,7 +6,10 @@ const Footer: FC = () => {
   const { t } = useTranslation('common')
 
   return (
-    <footer id='contact' className='pt-16 pb-10 lg:pt-32 lg:pb-20'>
+    <footer
+      id='contact'
+      className='bg-white pt-16 pb-10 transition-all dark:bg-[#0E2C38] lg:pt-32 lg:pb-20'
+    >
       <div className='container flex max-w-7xl flex-col space-y-12'>
         <h2 className='whitespace-pre-line font-prompt text-5xl font-medium dark:text-white'>
           {t('footer__title')}

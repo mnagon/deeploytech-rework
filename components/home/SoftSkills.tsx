@@ -43,7 +43,10 @@ const SoftSkills: FC = () => {
   ]
 
   return (
-    <section id='soft-skills' className='pt-10 pb-10 lg:pt-20 lg:pb-20'>
+    <section
+      id='soft-skills'
+      className='bg-white pt-10 pb-10 transition-all dark:bg-[#0E2C38] lg:pt-20 lg:pb-20'
+    >
       <motion.div
         initial={{
           opacity: 0,
