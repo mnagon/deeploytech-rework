@@ -1,4 +1,4 @@
-import { FC, useMemo } from 'react'
+import { FC } from 'react'
 import { useTranslation } from 'next-i18next'
 
 import Headline from '@components/common/Headline'
@@ -25,61 +25,58 @@ const ServiceCard: FC<ServiceCardProps> = ({ icon, title, content }) => (
 const Services: FC = () => {
   const { t } = useTranslation('home')
 
-  const SERVICE_LIST = useMemo(
-    (): Array<ServiceCardProps> => [
-      {
-        icon: 'ux',
-        title: t('service__uxui-design__title'),
-        content: t('service__uxui-design__content'),
-      },
-      {
-        icon: 'shiny-star',
-        title: t('service__identity__title'),
-        content: t('service__identity__content'),
-      },
-      {
-        icon: 'mornitor',
-        title: t('service__website__title'),
-        content: t('service__website__content'),
-      },
-      {
-        icon: 'mobile',
-        title: t('service__app__title'),
-        content: t('service__app__content'),
-      },
-      {
-        icon: 'magnifying-chart',
-        title: t('service__seo__title'),
-        content: t('service__seo__content'),
-      },
-      {
-        icon: 'metophone',
-        title: t('service__marketing__title'),
-        content: t('service__marketing__content'),
-      },
-      {
-        icon: 'research',
-        title: t('service__analysis__title'),
-        content: t('service__analysis__content'),
-      },
-      {
-        icon: 'mornitor-setting',
-        title: t('service__consult__title'),
-        content: t('service__consult__content'),
-      },
-      {
-        icon: 'hand-clasp',
-        title: t('service__outsource__title'),
-        content: t('service__outsource__content'),
-      },
-      {
-        icon: 'browser-setting',
-        title: t('service__line__title'),
-        content: t('service__line__content'),
-      },
-    ],
-    [],
-  )
+  const SERVICE_LIST: Array<ServiceCardProps> = [
+    {
+      icon: 'ux',
+      title: t('service__uxui-design__title'),
+      content: t('service__uxui-design__content'),
+    },
+    {
+      icon: 'shiny-star',
+      title: t('service__identity__title'),
+      content: t('service__identity__content'),
+    },
+    {
+      icon: 'mornitor',
+      title: t('service__website__title'),
+      content: t('service__website__content'),
+    },
+    {
+      icon: 'mobile',
+      title: t('service__app__title'),
+      content: t('service__app__content'),
+    },
+    {
+      icon: 'magnifying-chart',
+      title: t('service__seo__title'),
+      content: t('service__seo__content'),
+    },
+    {
+      icon: 'metophone',
+      title: t('service__marketing__title'),
+      content: t('service__marketing__content'),
+    },
+    {
+      icon: 'research',
+      title: t('service__analysis__title'),
+      content: t('service__analysis__content'),
+    },
+    {
+      icon: 'mornitor-setting',
+      title: t('service__consult__title'),
+      content: t('service__consult__content'),
+    },
+    {
+      icon: 'hand-clasp',
+      title: t('service__outsource__title'),
+      content: t('service__outsource__content'),
+    },
+    {
+      icon: 'browser-setting',
+      title: t('service__line__title'),
+      content: t('service__line__content'),
+    },
+  ]
 
   return (
     <section id='our-services' className='bg-white py-10 transition-all dark:bg-[#0E2C38] lg:py-20'>

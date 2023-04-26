@@ -98,7 +98,7 @@ const Hero: FC = () => {
             duration: 0.5,
             ease: 'easeOut',
           }}
-          className='mb-4 max-w-lg text-center text-4xl font-medium text-white lg:max-w-2xl lg:text-left lg:text-7xl'
+          className='mb-4 max-w-lg whitespace-pre-line text-center text-4xl font-medium text-white lg:max-w-2xl lg:text-left lg:text-7xl'
         >
           {t('hero__title')}
         </motion.h1>
