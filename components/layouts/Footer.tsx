@@ -34,7 +34,7 @@ const Footer: FC = () => {
             <h3 className='font-prompt text-lg uppercase dark:text-white'>
               {t('footer__office-time__headline')}
             </h3>
-            <p className=' text-slate-600 dark:text-white'>{t('footer__contact__content')}</p>
+            <p className=' text-slate-600 dark:text-white'>{t('footer__office-time__content')}</p>
           </div>
           <div>
             <h3 className='font-prompt text-lg uppercase dark:text-white'>

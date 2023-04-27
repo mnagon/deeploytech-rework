@@ -54,7 +54,7 @@ const SoftSkills: FC = () => {
         whileInView={{ opacity: 1 }}
         transition={{
           delay: 0.3,
-          duration: 1,
+          duration: 0.3,
         }}
         viewport={{ once: true }}
         className='container max-w-7xl'
